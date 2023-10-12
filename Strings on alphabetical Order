@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class SortListAlphabetically {
+    public static void main(String[] args) {
+        List<String> stringList = new ArrayList<>();
+        
+        stringList.add("Banana");
+        stringList.add("Apple");
+        stringList.add("Cherry");
+        stringList.add("Date");
+        stringList.add("Fig");
+        Collections.sort(stringList);
+    
+        System.out.println("Sorted List:");
+        for (String str : stringList) {
+            System.out.println(str);
+        }
+    }
+}
