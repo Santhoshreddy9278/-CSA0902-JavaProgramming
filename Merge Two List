@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class MergeLists {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the elements of the first list (comma-separated):");
+        String input1 = scanner.nextLine();
+        List<String> list1 = new ArrayList<>();
+        for (String item : input1.split(",")) {
+            list1.add(item.trim());
+        }
+        System.out.println("Enter the elements of the second list (comma-separated):");
+        String input2 = scanner.nextLine();
+        List<String> list2 = new ArrayList<>();
+        for (String item : input2.split(",")) {
+            list2.add(item.trim());
+        }
+        List<String> mergedList = new ArrayList<>(list1);
+        mergedList.addAll(list2);
+        System.out.println("Merged List: " + mergedList);
+
+        scanner.close();
+    }
+}
