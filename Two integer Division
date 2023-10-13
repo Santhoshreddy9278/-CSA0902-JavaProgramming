@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class IntegerDivision {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the dividend: ");
+        int dividend = scanner.nextInt();
+        System.out.print("Enter the divisor: ");
+        int divisor = scanner.nextInt();
+
+        int quotient = divide(dividend, divisor);
+        System.out.println("Quotient: " + quotient);
+
+        scanner.close();
+    }
+
+    private static int divide(int dividend, int divisor) {
+        if (divisor == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+
+        int quotient = 0;
+        int sign = (dividend < 0) ^ (divisor < 0) ? -1 : 1;
+
+        dividend = Math.abs(dividend);
+        divisor = Math.abs(divisor);
+
+        while (dividend >= divisor) {
+            dividend -= divisor;
+            quotient++;
+        }
+
+        return quotient * sign;
+    }
+}
